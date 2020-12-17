@@ -1,6 +1,6 @@
 # How to run
 
-The web is lvi [here](https://test-8-agency.vercel.app/)
+The web is live [here](https://test-8-agency.vercel.app/)
 
 First, install node dependencies:
 
