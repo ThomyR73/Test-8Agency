@@ -1,5 +1,7 @@
 # How to run
 
+The web is lvi [here](https://test-8-agency.vercel.app/)
+
 First, install node dependencies:
 
 ```bash

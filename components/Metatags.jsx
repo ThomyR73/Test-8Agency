@@ -12,7 +12,11 @@ const MetaTags = () => {
         content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue finibus nisi, vel pellentesque eros hendrerit ac. Nullam ac scelerisque tellus, nec hendrerit nibh. Etiam maximus dolor et velit faucibus, eu dictum massa egestas. Fusce ut tincidunt lacus. Mauris nisl dolor, sodales quis odio et, aliquet tincidunt felis."
       />
       <meta charSet="utf-8" />
-      <link rel="alternate" hrefLang="es_mx" />
+      <link
+        rel="alternate"
+        hrefLang="es_mx"
+        href="https://test-8-agency.vercel.app/"
+      />
 
       {/* Viewport */}
       <meta name="viewport" content="width=device-width, user-scalable=none" />
