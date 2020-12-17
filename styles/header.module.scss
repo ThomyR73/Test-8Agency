@@ -1,0 +1,102 @@
+@use "vars.module";
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+
+  > div {
+    height: 50px;
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .menuButton {
+      display: flex;
+      align-items: center;
+      background-color: vars.$white;
+      padding: 5px;
+      box-shadow: 0 0 5px rgba(58, 58, 58, 0.7);
+      color: vars.$purple;
+      cursor: pointer;
+      transition: background-color 300ms;
+
+      &:hover {
+        background-color: vars.$light-grey;
+      }
+
+      span {
+        display: none;
+      }
+    }
+
+    .logo {
+      display: none;
+      height: 25px;
+      filter: drop-shadow(0 0 5px rgba(58, 58, 58, 0.7));
+    }
+
+    .contact {
+      visibility: hidden;
+    }
+  }
+}
+
+.activeLogo {
+  display: block !important;
+  animation: logoTransition 300ms linear forwards;
+}
+
+@keyframes logoTransition {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menuButton {
+    span {
+      display: inline-block !important;
+      margin-left: 5px;
+      font-weight: 100;
+      color: vars.$purple;
+    }
+  }
+
+  .contact {
+    display: flex;
+    align-items: center;
+    visibility: visible !important;
+    padding: 7px 10px;
+    font-weight: 100;
+    color: vars.$purple;
+    background-color: vars.$white;
+    box-shadow: 0 0 5px rgba(58, 58, 58, 0.7);
+    cursor: pointer;
+
+    &:hover {
+      background-color: vars.$light-grey;
+    }
+
+    span {
+      display: block;
+      width: 10px;
+      height: 10px;
+      margin-top: 1px;
+      border-radius: 5px;
+      border: 1px solid vars.$purple;
+    }
+
+    span:first-of-type {
+      margin-right: -5px;
+    }
+
+    span:last-of-type {
+      margin-right: 5px;
+    }
+  }
+}

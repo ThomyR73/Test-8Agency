@@ -1,0 +1,105 @@
+@use "vars.module";
+
+.projects {
+  height: 100vh;
+  background-color: vars.$light-grey;
+
+  svg {
+    position: absolute;
+    height: 50px;
+    margin-top: calc(50vh - 50px);
+    padding: 10px 2px;
+    z-index: 50;
+    background-color: vars.$white;
+    box-shadow: 0 0 5px rgba(58, 58, 58, 0.7);
+    transition: background-color 300ms;
+
+    &:hover {
+      background-color: vars.$light-grey;
+    }
+
+    &:first-of-type {
+      left: 15px;
+    }
+
+    &:last-of-type {
+      right: 15px;
+    }
+  }
+
+  span {
+    @extend %label;
+    margin-top: 60px;
+  }
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  div {
+    width: 90vw;
+    padding: 15px 30px;
+    margin-bottom: 20px;
+    background-color: vars.$light-grey;
+    color: vars.$purple;
+
+    h3 {
+      margin: 0;
+      font-weight: 800;
+    }
+
+    p {
+      margin: 0;
+      font-weight: 100;
+    }
+  }
+}
+
+.projectContainer {
+  display: none;
+}
+
+.animate {
+  display: flex;
+  animation: displayAnimation 500ms linear forwards;
+}
+
+@keyframes displayAnimation {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+.image {
+  display: none;
+  height: 100vh;
+  background-size: cover;
+}
+
+@media (max-width: 1023px) {
+  .mobileImage {
+    display: block !important;
+    width: 100vw !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    div {
+      width: 33.333vw;
+      margin-bottom: 0;
+    }
+  }
+
+  .image {
+    display: block;
+  }
+}

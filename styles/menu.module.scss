@@ -1,0 +1,45 @@
+@use "vars.module";
+
+.menu {
+  display: none;
+  position: fixed;
+  overflow: hidden;
+  z-index: 100;
+  top: 60px;
+  left: 10px;
+  background-color: vars.$white;
+  transition: all 300ms;
+
+  ul {
+    padding-left: 0;
+    margin: 0;
+
+    li {
+      list-style: none;
+      padding: 15px;
+      width: 200px;
+      font-weight: 100;
+      color: vars.$purple;
+      cursor: pointer;
+      transition: background-color 300ms;
+
+      &:hover {
+        background-color: vars.$light-grey;
+      }
+    }
+  }
+}
+
+.activeMenu {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .menu {
+    ul {
+      li {
+        width: 300px;
+      }
+    }
+  }
+}

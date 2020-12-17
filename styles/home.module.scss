@@ -1,0 +1,174 @@
+@use "vars.module";
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh);
+  background-image: url("../public/Home.jpg");
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+}
+
+.headline1 {
+  text-align: center;
+  width: 70%;
+  filter: drop-shadow(0 0 5px rgba(58, 58, 58, 0.5));
+
+  .strong {
+    font-weight: 800;
+    font-size: 40px;
+    color: vars.$purple;
+
+    &:before {
+      content: "";
+      display: block;
+      width: 50%;
+      height: 5px;
+      margin-left: calc(100% - 50% - 25%);
+      margin-bottom: 20px;
+      background-color: vars.$purple;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      width: 50%;
+      height: 5px;
+      margin-left: calc(100% - 50% - 25%);
+      margin-top: 20px;
+      background-color: vars.$purple;
+    }
+  }
+
+  .light {
+    display: none;
+  }
+}
+
+.headline2 {
+  font-size: 30px;
+  font-weight: 800;
+  text-align: right;
+  color: vars.$purple;
+  width: 90%;
+  margin: 0 20px;
+  filter: drop-shadow(0 0 5px rgba(58, 58, 58, 0.7));
+
+  span {
+    display: none;
+  }
+}
+
+.headline3 {
+  width: 90%;
+  margin: 0 20px;
+  padding: 0 10px;
+  line-height: 1.7em;
+  filter: drop-shadow(0 0 5px rgba(58, 58, 58, 0.7));
+
+  span {
+    font-size: 30px;
+    font-weight: 800;
+    color: vars.$purple;
+    padding: 5px;
+    background-color: vars.$white;
+  }
+}
+
+.animate {
+  display: flex !important;
+  animation: displayAnimation 500ms linear forwards;
+}
+
+.headline {
+  display: none;
+  justify-content: center;
+  width: 100%;
+}
+
+@keyframes displayAnimation {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+.points {
+  position: absolute;
+  top: 93vh;
+
+  > div {
+    display: flex;
+  }
+
+  span {
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    border: 1px solid vars.$white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 300ms;
+  }
+
+  .active {
+    background-color: vars.$white;
+  }
+}
+
+@media (min-width: 1024px) {
+  .headline1 {
+    width: 100%;
+
+    .strong {
+      width: 100%;
+
+      &:before {
+        display: inline-block;
+        vertical-align: middle;
+        width: 20%;
+        margin-bottom: 0px;
+        margin-left: 0;
+        margin-right: 10px;
+      }
+
+      &:after {
+        display: inline-block;
+        vertical-align: middle;
+        width: 20%;
+        margin-top: 0px;
+        margin-left: 10px;
+      }
+    }
+
+    .light {
+      display: inline-block;
+      font-weight: 100;
+      color: vars.$purple;
+    }
+  }
+
+  .headline2 {
+    font-size: 50px;
+
+    span {
+      display: inline-block;
+      font-weight: 200;
+      font-size: 30px;
+      font-style: italic;
+    }
+  }
+
+  .headline3 {
+    line-height: 2.5em;
+
+    span {
+      font-size: 50px;
+    }
+  }
+}

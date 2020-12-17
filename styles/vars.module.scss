@@ -1,0 +1,18 @@
+// vars
+$white: #ffffff;
+$light-grey: #f4f2f5;
+$purple: #443d5b;
+$dark-purple: #302940;
+
+// mixins
+%label {
+  position: absolute;
+  display: inline-block;
+  z-index: 50;
+  background-color: $white;
+  font-weight: 700;
+  margin-left: 10px;
+  color: $purple;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(58, 58, 58, 0.7);
+}

@@ -1,0 +1,183 @@
+@use "vars.module";
+
+.contact {
+  color: vars.$white;
+  background-color: vars.$purple;
+
+  .pageName {
+    @extend %label;
+    margin-top: 60px;
+  }
+}
+
+.dataContainer {
+  padding-top: 100px;
+}
+
+.contactContainer {
+  padding: 0 40px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    font-weight: 800;
+    font-size: 30px;
+    text-shadow: 0 0 5px black;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+
+    li {
+      list-style: none;
+
+      svg {
+        height: 25px;
+        filter: drop-shadow(0 0 5px black);
+      }
+
+      &:nth-child(2) {
+        margin: 20px 0;
+      }
+    }
+  }
+}
+
+.email {
+  svg {
+    margin-right: 10px;
+  }
+
+  a {
+    vertical-align: top;
+    text-decoration: underline;
+  }
+}
+
+.phone {
+  svg {
+    margin: 0 14px 10px 0;
+  }
+
+  span {
+    display: inline-block;
+
+    a {
+      text-decoration: underline;
+      line-height: 1.5em;
+    }
+  }
+}
+
+.address {
+  svg {
+    margin: 0 14px 10px 0;
+  }
+
+  span {
+    display: inline-block;
+
+    a {
+      text-decoration: underline;
+      line-height: 1.5em;
+    }
+  }
+}
+
+.hiringContainer {
+  svg {
+    height: 30px;
+    margin: 30px 10px;
+    filter: drop-shadow(0 0 5px black);
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  span {
+    font-size: 22px;
+    font-weight: 800;
+    text-shadow: 0 0 5px black;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.map {
+  background-image: url("/mobilemap.jpg");
+  background-size: 300% 300%;
+  background-position-x: 20%;
+  background-position-y: 80%;
+  background-origin: content-box;
+  width: 100vw;
+  height: 100vw;
+
+  img {
+    display: none;
+  }
+}
+
+@media (min-width: 480px) {
+  .map {
+    background-size: 250% 250%;
+    background-position-x: 16%;
+    background-position-y: 85%;
+  }
+}
+
+@media (min-width: 768px) {
+  .map {
+    background-size: 150% 150%;
+    background-position-y: 100%;
+    background-position-x: -7%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact {
+    display: flex;
+    flex-direction: row;
+    max-height: 160vh;
+
+    .pageName {
+      margin-top: 60px;
+    }
+  }
+
+  .contactContainer {
+    width: 60%;
+  }
+
+  .dataContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hiringContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .map {
+    background-image: none;
+    height: auto;
+    overflow: hidden;
+    width: 40%;
+    flex-grow: 120;
+
+    img {
+      object-fit: fill;
+      margin-left: -950px;
+      display: block;
+    }
+  }
+}
